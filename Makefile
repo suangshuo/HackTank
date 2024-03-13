@@ -3,7 +3,7 @@ OBJ_DIR=obj
 BIN_DIR=bin
 SRC_DIR=src
 CFLAGS = -lncurses -O3
-OBJS = $(patsubst %.cpp,%.o,$(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/StartMenu/*.cpp))
+OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/StartMenu/*.cpp))
 
 $(BIN_DIR)/HackTank:$(OBJS)
 	$(CC) -o $@ $(OBJS) $(CFLAGS)
