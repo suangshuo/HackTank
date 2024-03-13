@@ -1,4 +1,4 @@
-#include"../init.h"
+#include"../_init_.h"
 using namespace std;
 int start(){
     printw("hello,world!");
