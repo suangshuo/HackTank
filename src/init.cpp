@@ -5,6 +5,9 @@ int init(){
     keypad(stdscr,true);
     noecho();
     raw();
+    cbreak();
+
+    endwin();
 
     return 0;
 }

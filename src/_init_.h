@@ -2,6 +2,10 @@
 
 #define _INIT_H__
 #include<ncurses.h>
+#include<panel.h>
+#include<form.h>
+#include<menu.h>
+
 #include<string>
 #include<cstring>
 #include<cstdlib>

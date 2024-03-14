@@ -2,12 +2,11 @@ CC = g++
 OBJ_DIR=obj
 BIN_DIR=bin
 SRC_DIR=src
-CFLAGS = -lncurses -O3
-OBJS = $(patsubst %.cpp,%.o,$(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/StartMenu/*.cpp))
+CFLAGS = -lncurses -lpanel -lmenu -lform -O3
+OBJS = $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/Class/*.cpp) $(wildcard $(SRC_DIR)/StartMenu/*.cpp)
 
 $(BIN_DIR)/HackTank:$(OBJS)
 	$(CC) -o $@ $(OBJS) $(CFLAGS)
-	mv $(OBJS) $(OBJ_DIR)
 
 .PHONY:
 	run init clean install
@@ -15,8 +14,8 @@ $(BIN_DIR)/HackTank:$(OBJS)
 run:
 	$(BIN_DIR)/HackTank
 init:
-	mkdir obj bin
+	mkdir bin
 clean:
-	rm -rf obj bin
+	rm -rf bin
 install:
 	mv $(BIN_DIR)/HackTank /usr/bin
